@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+
+</head>
+<body>
+
+    <nav id="desktop-nav"> 
+        <div class="logo">Ryan Wood</div>
+        <div>
+            <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+             </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Ryan</div>
+        <div class="hamburger">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span><div class="line"></div></span>
+                <span><div class="line"></div></span>
+                <span><div class="line"></div></span>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#about" onclick="toggleMenu">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMenu">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        </nav>
+<div class="containerprofile">
+
+
+ <section id="profile">
+        <div class="section-pic-container">
+        <img src="./assets/photowithrae.jpeg" class="profilepicture">
+    </div>
+    <div class="section-text">
+        <p class="section__text__p1">Hello, world. </p>
+        <h1 class="title">I'm Ryan.</h1>
+        <p class="section__text__p2"> Nice to "meet" you. I am a student in Altcademy's fullstack bootcamp. I hold a Bachelor's degree in English (Magna Cum Laude), 15 years work experience as a background investigator, and now looking for my "forever" career as a full stack developer. I'm self-driven and an introvert, so I feel that coding is my natural professional habitat.</p>
+<div class="btn-container">
+    <button 
+    class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
+       Resume</button>
+        <button class="btn btn-color-1" onclick="window.location.href='./#contact'"> Cover letter
+          </button>
+</div>
+<div id="socials-container">
+    <img src="./assets/github.png" alt="github" class="icon" onclick="window.open('https://github.com/KeepitSimpleCoding')">
+    <img src="./assets/linkedin.png" alt="linkedin" class="icon" onclick="window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/')">
+    
+
+</div>
+</div>
+</div>
+  </section><br><br>
+
+ <!--projects-->
+
+ <section class="project">
+ 
+    <h1 class="projectstitle">Projects</h1>
+    
+    <div class="projects">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./assets/airbnb.jpg" alt="Airbnb Clone">
+  <div class="card-body">
+    <a href="https://zesty-tiramisu-ac1a5a.netlify.app " class="links"><h5 class="card-title">Airbnb clone</h5>
+    <p class="card-text">A clone of the Airbnb website</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="./assets/newsweekclone.png" alt="Card image cap">
+    <div class="card-body">
+        <a href="https://frolicking-duckanoo-fa3751.netlify.app " class="links">  <h5 class="card-title">Newsweek clone</h5>
+      <p class="card-text">A clone of the Newsweek website</p>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="./assets/nextproject.jfif" alt="Card image cap">
+    <div class="card-body">
+      <a href="#" class="links"><h5 class="card-title">Next project</h5>
+      <p class="card-text">I will place my personal website here</p></a>
+    </div>
+  </div>
+  </section>
+  <footer> 
+    <div class="footer">
+        <div class="footer__text">
+            <p>© 2025 Ryan Wood</p>
+            <p class="footer__text__2">
+                                Part of Altcademy's full stack program</p>
+        </div>
+        <div class="footer__altcademy">
+            <img src="./assets/altcademy.png" alt="altcademy" class="icon">
+
+  <!--/projects-->
+    <script src="script.js"></script>
+</body>
+</html>
