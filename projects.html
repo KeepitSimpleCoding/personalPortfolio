@@ -1,84 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q4V6RKM8T9');
-</script>
-
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q4V6RKM8T9');
+  </script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Ryan Wood</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 🚫 NOTE: we are NOT linking your global CSS -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* ---------- GLOBAL ---------- */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       background: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
-    header, footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
+
+    a {
+      text-decoration: none;
+      color: #007acc;
+      transition: 0.3s;
     }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 8rem;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .nav-links a:hover {
+      color: #007acc;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
     main {
       max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 3rem auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
+
     h1 {
       text-align: center;
       margin-bottom: 1rem;
+      font-size: 2.4rem;
+      color: #222;
     }
+
     p.intro {
       text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      color: #555;
     }
+
+    /* ---------- PROJECT LIST ---------- */
     ul.projects {
       list-style: none;
       padding: 0;
     }
+
     ul.projects li {
       background: #f9f9f9;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-left: 4px solid #007acc;
-      border-radius: 4px;
+      margin-bottom: 1.2rem;
+      padding: 1.2rem;
+      border-left: 5px solid #007acc;
+      border-radius: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    ul.projects li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
     ul.projects li a {
-      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #007acc;
-      font-weight: bold;
     }
-    ul.projects li a:hover {
-      text-decoration: underline;
+
+    ul.projects li span {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" style="color:white; margin:0 10px;">Home</a>
-      <a href="projects.html" style="color:white; margin:0 10px;">Projects</a>
-      <a href="about.html" style="color:white; margin:0 10px;">About</a>
-      <a href="contact.html" style="color:white; margin:0 10px;">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <div class="logo">Ryan Wood</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/">LinkedIn</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="https://keepitsimplecoding5.wordpress.com/blog/">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <main>
     <h1>Welcome to My Projects</h1>
@@ -87,12 +162,30 @@
     </p>
 
     <ul class="projects">
-      <li><a href="#">🌦️ Weather API App</a> – A JavaScript-powered web app that fetches and displays live weather data from an external API.</li>
-      <li><a href="#">🤖 Chatbot Project</a> – An interactive chatbot that uses logic, conditionals, and possibly a backend API to simulate conversations.</li>
-      <li><a href="#">🗄️ SQL Database Project</a> – A data project that involves designing databases, writing queries, and analyzing structured data.</li>
-      <li><a href="#">📝 Technical Writing Sample</a> – A professional documentation project showcasing clear, concise technical content.</li>
-      <li><a href="#">🧪 Software Testing Project</a> – A QA-focused project that includes manual test cases and possibly automated test scripts.</li>
-      <li><a href="#">⚛️ React Web Application</a> – A front-end application built with React, demonstrating dynamic UI and component-based design.</li>
+      <li>
+        <a href="#">🌦️ Weather API App</a>
+        <span>A JavaScript-powered web app that fetches and displays live weather data from an external API.</span>
+      </li>
+      <li>
+        <a href="#">🤖 Chatbot Project</a>
+        <span>An interactive chatbot that uses logic, conditionals, and possibly a backend API to simulate conversations.</span>
+      </li>
+      <li>
+        <a href="#">🗄️ SQL Database Project</a>
+        <span>A data project that involves designing databases, writing queries, and analyzing structured data.</span>
+      </li>
+      <li>
+        <a href="#">📝 Technical Writing Sample</a>
+        <span>A professional documentation project showcasing clear, concise technical content.</span>
+      </li>
+      <li>
+        <a href="#">🧪 Software Testing Project</a>
+        <span>A QA-focused project that includes manual test cases and possibly automated test scripts.</span>
+      </li>
+      <li>
+        <a href="#">⚛️ React Web Application</a>
+        <span>A front-end application built with React, demonstrating dynamic UI and component-based design.</span>
+      </li>
     </ul>
   </main>
 
