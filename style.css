@@ -230,7 +230,8 @@ section {
     transition: all 0.3s ease;
 }
 
-.btn-color-1:hover, btn-color-2:hover
+
+.btn-color-1:hover, .btn-color-2:hover
 {border: rgb(0, 0, 0) 0.1rem solid}
 
 .btn-color-1, .btn-color-2:hover {

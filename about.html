@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q4V6RKM8T9');
+  </script>
 
-  gtag('config', 'G-Q4V6RKM8T9');
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
 
-
-
-
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
+
 <body>
 
-    <nav id="desktop-nav"> 
-        <div class="logo">Contact Info</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="https://keepitsimplecoding5.wordpress.com/blog/">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                       </ul>
-        </div>
-    </nav>
+  <!-- Desktop Navigation -->
+  <nav id="desktop-nav"> 
+    <div class="logo">Contact Info</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="https://keepitsimplecoding5.wordpress.com/blog/">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav id="hamburger-nav">
-        <div class="logo">Ryan</div>
-        <div class="hamburger">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span><div class="line"></div></span>
-                <span><div class="line"></div></span>
-                <span><div class="line"></div></span>
-            <div class="menu-links">
-                <ul>
-                    <li><a href="#about" onclick="toggleMenu">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-        </nav>
-<div class="containerprofile">
+  <!-- Mobile Navigation -->
+  <nav id="hamburger-nav">
+    <div class="logo">Ryan</div>
+    <div class="hamburger">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span><div class="line"></div></span>
+        <span><div class="line"></div></span>
+        <span><div class="line"></div></span>
+      </div>
+      <div class="menu-links">
+        <ul>
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- About Section -->
+  <div class="containerprofile">
     <header>
-        <br>
-    <br></vr>
+      <section class="about-section" style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
+        <h1>About Me</h1>
         <p>
+          Hi there. My name is Ryan. I’m currently updating this section as I work toward a new career that blends technology, AI, and data. 
+          A bit about me: I’m a dedicated father of four amazing kids who are my greatest motivation and take up most of my free time. 
+        </p>
+        <p>
+          Professionally, I’m focused on expanding my skills in both software engineering and data analysis as I explore different paths within the tech field. 
+          I’m naturally introverted, detail-oriented, and committed to continuous learning. 
+          My ultimate goal is to build meaningful solutions, grow my technical expertise, and create a future that offers stability and purpose for my family.
+        </p>
+      </section>
+    </header>
+  </div>
 
-    <div style="margin-left: 200px; margin-right: 200px;">
-        Hi there. My name is Ryan, and this is my "about me" section. I'm currently in the process of editing this, as I look to leverage AI and work towards a career in data. So I guess you'd like to know a little about me? Where do I begin? First and foremost, I'm a father to four beautiful children. They are my pride and joy (and take most all of my free time). I am currently studying both software engineering and data analysis, but I haven't decided on a path quite yet. I am an introverted, hard-working guy that loves to constantly progress.
-    </div></div>
-    </p>
+</body>
+</html>

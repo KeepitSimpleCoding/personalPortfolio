@@ -1,138 +1,181 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q4V6RKM8T9');
+  </script>
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
 
-  gtag('config', 'G-Q4V6RKM8T9');
-</script>
-
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 <body>
 
-    <nav id="desktop-nav"> 
-        <div class="logo">Ryan Wood</div>
-        <div>
-            <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/">LinkedIn</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="https://keepitsimplecoding5.wordpress.com">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-                   </ul>
-                </div>
-    </nav>
-
-    <nav id="hamburger-nav">
-        <div class="logo">Ryan
-          </div>
-        <div class="hamburger">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span><div class="line"></div></span>
-                <span><div class="line"></div></span>
-                <span><div class="line"></div></span>
-            </div>
-            <div class="menu-links">
-                <ul>
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-        </nav>
-<div class="containerprofile">
-
-
- <section id="profile">
-        <div class="section-pic-container">
-        <img src="./assets/photowithrae.jpeg" class="profilepicture">
+  <!-- Desktop Navigation -->
+  <nav id="desktop-nav" aria-label="Primary">
+    <div class="logo">Ryan Wood</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="https://keepitsimplecoding5.wordpress.com" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="section-text">
-        <p class="section__text__p1">Hello, world. </p>
-        <h1 class="title">I'm Ryan.</h1>
-<p class="section__text__p2">
-  Nice to "meet" you. I am a career background investigator (15+ years) looking to move into a career in tech. I am studying full stack development, testing/QA, technical/API documentation and Articial Intelligence (AI). I want to be as well-rounded as possible in this new AI-driven era.  I previously earned a B.A. in English (writing concentration) from George Mason University, graduating magna cum laude (GPA 3.7). I am a self-driven, empathetic problem-solver and look forward to continued growth in this field.
-</p>
-<div class="btn-container">
-    <button 
-    class="btn btn-color-2" onclick="window.open('./assets/Wood Ryan Resume.pdf')">
-       Resume</button>
-        <button class="btn btn-color-1" onclick="window.location.href='./#contact'"> Cover letter
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <nav id="hamburger-nav" aria-label="Mobile">
+    <div class="logo">Ryan</div>
+    <div class="hamburger">
+      <button class="hamburger-icon" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span><div class="line"></div></span>
+        <span><div class="line"></div></span>
+        <span><div class="line"></div></span>
+      </button>
+      <div class="menu-links" id="mobile-menu">
+        <ul>
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Profile / About -->
+    <section id="profile" class="containerprofile" aria-labelledby="intro-title">
+      <div class="section-pic-container">
+        <img src="./assets/photowithrae.jpeg" class="profilepicture" alt="Ryan with Raelynn" loading="lazy" />
+      </div>
+
+      <div class="section-text">
+        <p class="section__text__p1">Hello, world.</p>
+        <h1 id="intro-title" class="title">I'm Ryan.</h1>
+
+        <p class="section__text__p2">
+          Nice to meet you. I’m a career background investigator (15+ years) transitioning into tech.
+          I’m studying full-stack development, testing/QA, technical/API documentation, and
+          <span class="nowrap">Artificial Intelligence (AI)</span> to become well-rounded in today’s AI-driven era.
+          I hold a B.A. in English (writing concentration) from George Mason University, graduating magna cum laude (GPA 3.7).
+          I’m a self-driven, empathetic problem-solver, and I’m excited to keep growing in this field.
+        </p>
+
+        <div class="btn-container">
+          <button class="btn btn-color-2"
+                  onclick="window.open('./assets/Wood Ryan Resume.pdf')">
+            Resume
           </button>
-</div>
-<div id="socials-container">
-    <img src="./assets/github.png" alt="github" class="icon" onclick="window.open('https://github.com/KeepitSimpleCoding')">
-    <img src="./assets/linkedin.png" alt="linkedin" class="icon" onclick="window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/')">
-    
-
-</div>
-</div>
-</div>
-  </section><br><br>
-
- <!--projects-->
-
- <section class="project">
- 
-    <h1 class="projectstitle">Projects</h1>
-    
-    <div class="projects">
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="./assets/airbnb.jpg" alt="Airbnb Clone">
-  <div class="card-body">
-    <a href="https://zesty-tiramisu-ac1a5a.netlify.app " class="links"><h5 class="card-title">Airbnb clone</h5>
-    <p class="card-text">A clone of the Airbnb website</p>
-  </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="./assets/newsweekclone.png" alt="Card image cap">
-    <div class="card-body">
-        <a href="https://frolicking-duckanoo-fa3751.netlify.app " class="links">  <h5 class="card-title">Newsweek clone</h5>
-      <p class="card-text">A clone of the Newsweek website</p>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="./assets/nextproject.jfif" alt="Card image cap">
-    <div class="card-body">
-      <a href="#" class="links"><h5 class="card-title">Next project</h5>
-      <p class="card-text">I will place my personal website here</p></a>
-    </div>
-  </div>
-  </section>
-  <footer> 
-    <div class="footer">
-        <div class="footer__text">
-            <p>© 2025 Ryan Wood</p>
-            <p class="footer__text__2">
-                                Part of Altcademy's full stack program</p>
+          <button class="btn btn-color-1"
+                  onclick="window.location.href='contact.html'">
+            Cover Letter
+          </button>
         </div>
-        <div class="footer__altcademy">
-            <img src="./assets/altcademy.png" alt="altcademy" class="icon">
 
-  <!--/projects-->
-    <script src="script.js"></script>
+        <div id="socials-container" class="socials">
+          <img src="./assets/github.png" alt="GitHub" class="icon"
+               role="link" tabindex="0"
+               onclick="window.open('https://github.com/KeepitSimpleCoding','_blank','noopener')"
+               onkeypress="if(event.key==='Enter'){window.open('https://github.com/KeepitSimpleCoding','_blank','noopener')}" />
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
+               role="link" tabindex="0"
+               onclick="window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/','_blank','noopener')"
+               onkeypress="if(event.key==='Enter'){window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/','_blank','noopener')}" />
+        </div>
+      </div>
+    </section>
 
+  <!-- AltCademy Projects -->
+<section id="projects" class="project" style="margin-top: 60px; clear: both;">
+  <h1 class="projectstitle">AltCademy Projects</h1>
 
+  <div class="projects">
+    <!-- Card 1 -->
+    <article class="card" style="width: 18rem;">
+      <a class="links"
+         href="https://zesty-tiramisu-ac1a5a.netlify.app"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Open Airbnb Clone project in a new tab">
+        <img class="card-img-top" src="./assets/airbnb.jpg"
+             alt="Screenshot of Airbnb clone project" loading="lazy" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a class="links"
+             href="https://zesty-tiramisu-ac1a5a.netlify.app"
+             target="_blank" rel="noopener noreferrer">
+            Airbnb Clone
+          </a>
+        </h5>
+        <p class="card-text">A responsive clone of the Airbnb landing experience.</p>
+      </div>
+    </article>
 
+    <!-- Card 2 -->
+    <article class="card" style="width: 18rem;">
+      <a class="links"
+         href="https://frolicking-duckanoo-fa3751.netlify.app"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Open Newsweek Clone project in a new tab">
+        <img class="card-img-top" src="./assets/newsweekclone.png"
+             alt="Screenshot of Newsweek clone project" loading="lazy" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a class="links"
+             href="https://frolicking-duckanoo-fa3751.netlify.app"
+             target="_blank" rel="noopener noreferrer">
+            Newsweek Clone
+          </a>
+        </h5>
+        <p class="card-text">A clone of the Newsweek home page using modern layout techniques.</p>
+      </div>
+    </article>
 
-            
+    <!-- Card 3 -->
+    <article class="card" style="width: 18rem;">
+      <a class="links" href="#"
+         aria-label="Upcoming project placeholder">
+        <img class="card-img-top" src="./assets/nextproject.jfif"
+             alt="Placeholder for upcoming personal project" loading="lazy" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a class="links" href="#">Next Project</a>
+        </h5>
+        <p class="card-text">I will place my personal website here.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="footer">
+      <div class="footer__text">
+        <p>© 2025 Ryan Wood</p>
+        <p class="footer__text__2">Part of Altcademy’s full stack program</p>
+      </div>
+      <div class="footer__altcademy">
+        <img src="./assets/altcademy.png" alt="Altcademy logo" class="icon" loading="lazy" />
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
