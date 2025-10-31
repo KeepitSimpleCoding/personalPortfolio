@@ -11,4 +11,4 @@ This project is a simple serverless API built with AWS Lambda and exposed public
 ![Postman screenshot](assets/awspostman200screenshot.jpg)
 Expected response body:
 ```text
-Hello from Ryan's AWS Lambda!
+Hello. I'm Ryan writing from Lambda! I'm attempting to deploy.
