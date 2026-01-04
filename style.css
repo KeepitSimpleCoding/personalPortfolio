@@ -1,225 +1,332 @@
 /* =========================
-   GLOBAL RESET (SAFE)
+   Base
    ========================= */
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #5b5b5b;
+  --border: rgba(0,0,0,0.10);
+  --shadow: 0 10px 28px rgba(0,0,0,0.10);
+  --radius: 16px;
 }
 
-body {
+body{
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
   line-height: 1.5;
-  color: #111;
-  background: #fff;
+}
+
+img{ max-width: 100%; height: auto; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.page{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 10px 0 40px;
 }
 
 /* =========================
-   NAV
+   Nav
    ========================= */
-nav {
+.nav{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
 }
 
-.nav-links {
+.nav__logo{
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  font-size: 20px;
+}
+
+.nav__links{
   display: flex;
+  gap: 18px;
   list-style: none;
-  gap: 20px;
   padding: 0;
   margin: 0;
 }
 
-.nav-links a {
+.nav__links a{
+  font-weight: 600;
+  color: #1a1a1a;
   text-decoration: none;
-  color: inherit;
+  padding: 8px 10px;
+  border-radius: 10px;
 }
 
-/* =========================
-   PROFILE SECTION
-   ========================= */
-.containerprofile {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  padding: 48px 32px;
-  align-items: center;
+.nav__links a:hover{
+  background: rgba(0,0,0,0.05);
 }
 
-.section-pic-container {
-  max-width: 280px;
-}
+/* Mobile nav container hidden by default */
+.nav--mobile{ display: none; }
 
-.profilepicture {
-  width: 100%;
-  height: auto;
+.hamburger-icon{
+  background: transparent;
+  border: 1px solid var(--border);
   border-radius: 12px;
-}
-
-.section-text {
-  max-width: 640px;
-}
-
-.title {
-  margin: 8px 0;
-}
-
-/* =========================
-   BUTTONS
-   ========================= */
-.btn-container {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.btn {
-  padding: 10px 18px;
-  border-radius: 8px;
+  padding: 10px;
   cursor: pointer;
-  border: 1px solid #111;
-  background: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.btn-color-1 {
+.hamburger-icon .line{
+  width: 26px;
+  height: 3px;
   background: #111;
-  color: #fff;
+  border-radius: 999px;
 }
 
-.btn-color-2 {
-  background: transparent;
+.menu-links{
+  position: absolute;
+  top: 56px;
+  right: 0;
+  width: 220px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: max-height .22s ease, opacity .22s ease, transform .22s ease;
 }
 
-/* =========================
-   SOCIAL ICONS
-   ========================= */
-.socials {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.icon {
-  width: 28px;
-  height: auto;
-  cursor: pointer;
-}
-
-/* =========================
-   PROJECT SECTIONS (GENERIC)
-   ========================= */
-.project {
-  padding: 48px 32px;
-}
-
-.projectstitle {
-  margin-bottom: 24px;
-}
-
-/* =========================
-   ALTCADEMY PROJECTS
-   (THIS IS THE ONLY IMAGE FIX)
-   ========================= */
-#projects img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-  border-top: 1px solid #ddd;
-  padding: 24px 32px;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer__altcademy img {
-  width: 120px;
-  height: auto;
-}
-
-/* ==========================
-   FIX-IT PATCH (paste at BOTTOM of style.css)
-   This only normalizes sizing/layout and stops giant images.
-   ========================== */
-
-/* 1) NAV should not be bulleted */
-.nav-links,
-.menu-links ul {
+.menu-links ul{
   list-style: none;
-  padding-left: 0;
+  padding: 8px;
   margin: 0;
 }
 
-/* 2) Profile photo + social icons: hard size limits */
-.section-pic-container {
-  max-width: 340px;
-}
-
-.profilepicture {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
+.menu-links li a{
   display: block;
-  border-radius: 14px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.icon {
-  width: 32px;
-  height: 32px;
+.menu-links li a:hover{
+  background: rgba(0,0,0,0.06);
+}
+
+.menu-links.open{
+  max-height: 340px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   Hero
+   ========================= */
+.hero{
+  padding: 26px 0 10px;
+}
+
+.hero__grid{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.hero__photo{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.profilepicture{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.eyebrow{
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.h1{
+  margin: 0 0 14px;
+  font-size: clamp(34px, 4vw, 48px);
+  letter-spacing: -1px;
+}
+
+.lead{
+  margin: 0;
+  color: #202020;
+  max-width: 64ch;
+}
+
+.cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.socials{
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.icon{
+  width: 34px;
+  height: 34px;
   object-fit: contain;
 }
 
-/* 3) PROJECT LAYOUT: force wrapping and consistent card sizing */
-.projects {
+/* =========================
+   Buttons
+   ========================= */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 800;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn--solid{
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.btn--outline{
+  background: #fff;
+  color: #111;
+}
+
+.btn--sm{
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* =========================
+   Sections + Cards
+   ========================= */
+.section{
+  padding: 44px 0 10px;
+}
+
+.section__header{
+  margin-bottom: 18px;
+}
+
+.h2{
+  margin: 0 0 6px;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.6px;
+}
+
+.h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+.muted{
+  margin: 0;
+  color: var(--muted);
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
   display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  align-items: stretch;
+  flex-direction: column;
 }
 
-/* Your cards currently have inline style width:18rem; keep it consistent */
-.projects .card {
-  flex: 0 1 18rem;          /* respects ~18rem but allows wrapping */
-  max-width: 18rem;
-  width: 100%;
-}
-
-/* 4) PROJECT IMAGES: stop huge thumbnails everywhere inside cards */
-.projects .card img,
-.projects .card-img-top {
-  width: 100%;
-  height: 160px;            /* adjust: 140–180 depending on taste */
-  object-fit: cover;
+.card__media{
   display: block;
 }
 
-/* 5) AltCademy section: same rule, but a touch smaller if you want */
-#projects .card img,
-#projects .card-img-top {
-  height: 150px;
+.card__img{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
 }
 
-/* 6) Prevent weird stretching if any parent uses grid/flex strangely */
-.projects .card-body {
+.card__body{
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
 }
 
-/* 7) Optional: make headings not absurdly huge if your CSS got reset */
-.projectstitle {
-  font-size: clamp(28px, 4vw, 46px);
-  margin: 0 0 18px 0;
+.card__title{
+  text-decoration: none;
 }
 
+.card__text{
+  margin: 0;
+  color: #222;
+}
+
+.card__actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer{
+  border-top: 1px solid var(--border);
+  margin-top: 42px;
+}
+
+.footer__inner{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer__logo{
+  width: 140px;
+  height: auto;
+}
