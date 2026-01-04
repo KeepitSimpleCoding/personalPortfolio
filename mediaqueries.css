@@ -1,45 +1,38 @@
 /* =========================
-   mediaqueries.css (CLEAN)
+   mediaqueries.css
    ========================= */
 
-/* Desktop / large screens */
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: auto;
-    margin-bottom: 3rem;
+/* Tablet */
+@media screen and (max-width: 1000px){
+  .hero__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .profilepicture{
+    height: 380px;
+  }
+
+  .grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Tablet + below */
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
+/* Mobile */
+@media screen and (max-width: 700px){
+  /* swap desktop nav to mobile nav */
+  #desktop-nav{ display: none; }
+  #hamburger-nav{ display: flex; position: relative; }
+
+  .grid{
+    grid-template-columns: 1fr;
   }
 
-  #hamburger-nav {
-    display: flex;
+  .profilepicture{
+    height: 320px;
   }
 
-  /* optional: hide the big logo on small screens if you want */
-  /* .logo { display: none; } */
-}
-
-/* Phone */
-@media screen and (max-width: 600px) {
-  .containerprofile {
-    padding: 24px 16px;
-  }
-
-  .section-pic-container {
-    max-width: 100%;
-  }
-
-  .btn-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .projects {
-    gap: 16px;
+  .menu-links{
+    right: 0;
+    width: 230px;
   }
 }
