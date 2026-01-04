@@ -1,38 +1,204 @@
 /* =========================
-   mediaqueries.css
+   MEDIA QUERIES
    ========================= */
 
-/* Tablet */
-@media screen and (max-width: 1000px){
-  .hero__grid{
-    grid-template-columns: 1fr;
+/* Large screens (1400px and up) */
+@media screen and (min-width: 1400px) {
+  .containerprofile {
+    padding: 5rem 15%;
   }
-
-  .profilepicture{
-    height: 380px;
-  }
-
-  .grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+  .project {
+    padding: 5rem 15%;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 700px){
-  /* swap desktop nav to mobile nav */
-  #desktop-nav{ display: none; }
-  #hamburger-nav{ display: flex; position: relative; }
-
-  .grid{
-    grid-template-columns: 1fr;
+/* Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+  #hamburger-nav {
+    display: none;
   }
-
-  .profilepicture{
-    height: 320px;
+  
+  #desktop-nav {
+    display: flex;
   }
+}
 
-  .menu-links{
-    right: 0;
-    width: 230px;
+/* Tablets and below (1024px and down) */
+@media screen and (max-width: 1024px) {
+  #desktop-nav {
+    display: none;
+  }
+  
+  #hamburger-nav {
+    display: flex;
+  }
+  
+  .containerprofile {
+    padding: 3rem 5%;
+  }
+  
+  .project {
+    padding: 3rem 5%;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .projectstitle {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets (768px to 1024px) */
+@media screen and (max-width: 768px) {
+  .containerprofile {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 5%;
+  }
+  
+  .section-text {
+    max-width: 100%;
+  }
+  
+  .section__text__p2 {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .projectstitle {
+    font-size: 1.8rem;
+  }
+  
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .projects {
+    gap: 1.5rem;
+  }
+  
+  .card {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+  
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile phones (600px and down) */
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .containerprofile {
+    padding: 1.5rem 5%;
+    gap: 2rem;
+  }
+  
+  .section-pic-container {
+    max-width: 280px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 1rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  
+  .projectstitle {
+    font-size: 1.6rem;
+  }
+  
+  .project {
+    padding: 2rem 5%;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .footer {
+    padding: 1.5rem 5%;
+  }
+  
+  .footer__altcademy img {
+    width: 100px;
+  }
+}
+
+/* Extra small screens (400px and down) */
+@media screen and (max-width: 400px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .section__text__p1,
+  .section__text__p2 {
+    font-size: 0.9rem;
+  }
+  
+  .projectstitle {
+    font-size: 1.4rem;
+  }
+  
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation fixes */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .containerprofile {
+    min-height: auto;
+    padding: 2rem 5%;
+  }
+  
+  .section-pic-container {
+    max-width: 200px;
+  }
+  
+  .profilepicture {
+    max-height: 300px;
   }
 }
