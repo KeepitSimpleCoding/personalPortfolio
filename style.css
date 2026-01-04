@@ -1,87 +1,148 @@
-/* ===== Paste this into style.css (or add near the bottom) ===== */
-
-/* Project grid */
-.project-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
-  align-items: stretch;
+/* =========================
+   GLOBAL RESET (SAFE)
+   ========================= */
+* {
+  box-sizing: border-box;
 }
 
-/* Project card */
-.project-card{
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 14px;
-  overflow: hidden;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: #111;
   background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Image */
-.project-card__img{
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
+/* =========================
+   NAV
+   ========================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
 }
 
-/* Body */
-.project-card__body{
-  padding: 16px;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.project-card__title{
-  margin: 0 0 10px 0;
-  font-size: 1.05rem;
-}
-
-.project-card__title-link{
+.nav-links a {
   text-decoration: none;
   color: inherit;
 }
 
-.project-card__text{
-  margin: 0;
-  line-height: 1.5;
-  opacity: 0.9;
+/* =========================
+   PROFILE SECTION
+   ========================= */
+.containerprofile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 48px 32px;
+  align-items: center;
 }
 
-/* ===== Hamburger icon lines (in case you need it) ===== */
-.hamburger-icon .line{
-  display: block;
-  width: 28px;
-  height: 3px;
-  margin: 5px 0;
+.section-pic-container {
+  max-width: 280px;
+}
+
+.profilepicture {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.section-text {
+  max-width: 640px;
+}
+
+.title {
+  margin: 8px 0;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #111;
+  background: transparent;
+}
+
+.btn-color-1 {
   background: #111;
-  border-radius: 3px;
+  color: #fff;
 }
 
+.btn-color-2 {
+  background: transparent;
+}
 
-/* === HARD OVERRIDE: project images too large === */
-.project-card__img {
-  width: 100% !important;
-  height: 180px !important;
-  object-fit: cover !important;
+/* =========================
+   SOCIAL ICONS
+   ========================= */
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.icon {
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* =========================
+   PROJECT SECTIONS (GENERIC)
+   ========================= */
+.project {
+  padding: 48px 32px;
+}
+
+.projectstitle {
+  margin-bottom: 24px;
+}
+
+/* =========================
+   ALTCADEMY PROJECTS
+   (THIS IS THE ONLY IMAGE FIX)
+   ========================= */
+#projects img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
   display: block;
 }
 
-/* === FINAL OVERRIDE: stop AltCademy images from blowing up === */
-/* mediaqueries.css loads after style.css, so overrides must live here (or later) */
-
-#projects .project-card__link {
-  display: block !important;
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  border-top: 1px solid #ddd;
+  padding: 24px 32px;
 }
 
-#projects .project-card__img {
-  width: 100% !important;
-  height: 180px !important;
-  max-height: 180px !important;
-  object-fit: cover !important;
-  display: block !important;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Optional: if the cards themselves are stretching too tall */
-#projects .project-card {
-  align-self: start !important;
+.footer__altcademy img {
+  width: 120px;
+  height: auto;
 }
