@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
-<body>
 
+<body>
   <!-- Desktop Navigation -->
   <nav id="desktop-nav" aria-label="Primary">
     <div class="logo">Ryan Wood</div>
@@ -37,18 +37,21 @@
   <!-- Mobile Navigation -->
   <nav id="hamburger-nav" aria-label="Mobile">
     <div class="logo">Ryan</div>
+
     <div class="hamburger">
+      <!-- CHANGED: simplified hamburger markup so CSS is easier/more standard -->
       <button class="hamburger-icon" aria-label="Toggle menu" onclick="toggleMenu()">
-        <span><div class="line"></div></span>
-        <span><div class="line"></div></span>
-        <span><div class="line"></div></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
       </button>
+
       <div class="menu-links" id="mobile-menu">
         <ul>
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <!-- CHANGED: these were #about/#experience/#contact which don't exist on this page -->
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -69,29 +72,18 @@
           I’m a background investigator transitioning into tech, specializing in QA testing and technical/API documentation. With 15+ years of experience in analytical writing, documentation, and spotting inconsistencies, I bring a detail-oriented, investigative mindset to software quality and technical writing. I use Python, SQL, and JavaScript for testing and validation, and my English degree strengthens my ability to create clear, structured technical documentation. I’m building a career blending QA, documentation, and thoughtful problem-solving.
         </p>
 
-
-       <div class="btn-container">
-  <button class="btn btn-color-2"
-          onclick="window.open('projects.html')">
-    Projects
-  </button>
-
-  <button class="btn btn-color-2"
-          onclick="window.open('./assets/Wood Ryan Resume.pdf')">
-    Resume
-  </button>
-
-  <button class="btn btn-color-1"
-          onclick="window.location.href='contact.html'">
-    Cover Letter
-  </button>
-</div>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('projects.html')">Projects</button>
+          <button class="btn btn-color-2" onclick="window.open('./assets/Wood Ryan Resume.pdf')">Resume</button>
+          <button class="btn btn-color-1" onclick="window.location.href='contact.html'">Cover Letter</button>
+        </div>
 
         <div id="socials-container" class="socials">
           <img src="./assets/github.png" alt="GitHub" class="icon"
                role="link" tabindex="0"
                onclick="window.open('https://github.com/KeepitSimpleCoding','_blank','noopener')"
                onkeypress="if(event.key==='Enter'){window.open('https://github.com/KeepitSimpleCoding','_blank','noopener')}" />
+
           <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
                role="link" tabindex="0"
                onclick="window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/','_blank','noopener')"
@@ -100,141 +92,140 @@
       </div>
     </section>
 
+    <!-- Personal Projects -->
+    <section id="personal-projects" class="project" style="margin-top: 60px; clear: both;">
+      <h1 class="projectstitle">Personal Projects</h1>
 
-  <!-- Personal Projects -->
-  <section id="personal-projects" class="project" style="margin-top: 60px; clear: both;">
-    <h1 class="projectstitle">Personal Projects</h1>
+      <!-- CHANGED: project grid wrapper class -->
+      <div class="project-grid">
+        <!-- Card 1: Kitchen API QA Project -->
+        <!-- CHANGED: replaced Bootstrap-ish card classes with custom classes -->
+        <article class="project-card">
+          <a class="project-card__link"
+             href="YOUR_KITCHEN_API_GITHUB_URL"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open Kitchen API QA project on GitHub in a new tab">
+            <img class="project-card__img" src="./assets/kitchenapi.jpg"
+                 alt="Screenshot or cover image for Kitchen API QA project" loading="lazy" />
+          </a>
 
-    <div class="projects">
-      <!-- Card 1: Kitchen API QA Project -->
-      <article class="card" style="width: 18rem;">
-        <a class="links"
-           href="YOUR_KITCHEN_API_GITHUB_URL"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Open Kitchen API QA project on GitHub in a new tab">
-          <img class="card-img-top" src="./assets/kitchenapi.jpg"
-               alt="Screenshot or cover image for Kitchen API QA project" loading="lazy" />
-        </a>
+          <div class="project-card__body">
+            <h5 class="project-card__title">
+              <a class="project-card__title-link"
+                 href="YOUR_KITCHEN_API_GITHUB_URL"
+                 target="_blank" rel="noopener noreferrer">
+                Kitchen API QA Portfolio
+              </a>
+            </h5>
 
-        <div class="card-body">
-          <h5 class="card-title">
-            <a class="links"
-               href="YOUR_KITCHEN_API_GITHUB_URL"
-               target="_blank" rel="noopener noreferrer">
-              Kitchen API QA Portfolio
-            </a>
-          </h5>
+            <p class="project-card__text">
+              Manual QA documentation and test artifacts for a Node/Express API,
+              including test cases, bug logs, and validation notes.
+            </p>
 
-          <p class="card-text">
-            Manual QA documentation and test artifacts for a Node/Express API,
-            including test cases, bug logs, and validation notes.
-          </p>
+            <div class="btn-container" style="margin-top: 10px;">
+              <button class="btn btn-color-2"
+                      onclick="window.open('YOUR_KITCHEN_API_GITHUB_URL','_blank','noopener')">
+                GitHub Repo
+              </button>
 
-          <div class="btn-container" style="margin-top: 10px;">
-            <button class="btn btn-color-2"
-                    onclick="window.open('YOUR_KITCHEN_API_GITHUB_URL','_blank','noopener')">
-              GitHub Repo
-            </button>
+              <!-- Optional: Live demo button (remove if you don't have a deployed link) -->
+              <button class="btn btn-color-2"
+                      onclick="window.open('YOUR_KITCHEN_API_LIVE_URL','_blank','noopener')">
+                Live Demo
+              </button>
 
-            <!-- Optional: Live demo button (remove if you don't have a deployed link) -->
-            <button class="btn btn-color-2"
-                    onclick="window.open('YOUR_KITCHEN_API_LIVE_URL','_blank','noopener')">
-              Live Demo
-            </button>
-
-            <!-- Optional: Docs button (remove if you don't have a hosted docs link) -->
-            <button class="btn btn-color-1"
-                    onclick="window.open('YOUR_DOCS_URL','_blank','noopener')">
-              Docs
-            </button>
+              <!-- Optional: Docs button (remove if you don't have a hosted docs link) -->
+              <button class="btn btn-color-1"
+                      onclick="window.open('YOUR_DOCS_URL','_blank','noopener')">
+                Docs
+              </button>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Card 2: Placeholder for next personal project -->
-      <article class="card" style="width: 18rem;">
-        <a class="links" href="#"
-           aria-label="Upcoming personal project placeholder">
-          <img class="card-img-top" src="./assets/nextproject.jfif"
-               alt="Placeholder for upcoming personal project" loading="lazy" />
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">
-            <a class="links" href="#">Next Personal Project</a>
-          </h5>
-          <p class="card-text">More QA and documentation-focused work coming soon.</p>
-        </div>
-      </article>
-    </div>
-  </section>
+        <!-- Card 2: Placeholder for next personal project -->
+        <article class="project-card">
+          <a class="project-card__link" href="#"
+             aria-label="Upcoming personal project placeholder">
+            <img class="project-card__img" src="./assets/nextproject.jfif"
+                 alt="Placeholder for upcoming personal project" loading="lazy" />
+          </a>
 
+          <div class="project-card__body">
+            <h5 class="project-card__title">
+              <a class="project-card__title-link" href="#">Next Personal Project</a>
+            </h5>
+            <p class="project-card__text">More QA and documentation-focused work coming soon.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    
+    <!-- AltCademy Projects -->
+    <section id="projects" class="project" style="margin-top: 60px; clear: both;">
+      <h1 class="projectstitle">AltCademy Projects</h1>
 
-  <!-- AltCademy Projects -->
-<section id="projects" class="project" style="margin-top: 60px; clear: both;">
-  <h1 class="projectstitle">AltCademy Projects</h1>
-
-  <div class="projects">
-    <!-- Card 1 -->
-    <article class="card" style="width: 18rem;">
-      <a class="links"
-         href="https://zesty-tiramisu-ac1a5a.netlify.app"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Open Airbnb Clone project in a new tab">
-        <img class="card-img-top" src="./assets/airbnb.jpg"
-             alt="Screenshot of Airbnb clone project" loading="lazy" />
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">
-          <a class="links"
+      <!-- CHANGED: use same grid/cards -->
+      <div class="project-grid">
+        <article class="project-card">
+          <a class="project-card__link"
              href="https://zesty-tiramisu-ac1a5a.netlify.app"
-             target="_blank" rel="noopener noreferrer">
-            Airbnb Clone
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open Airbnb Clone project in a new tab">
+            <img class="project-card__img" src="./assets/airbnb.jpg"
+                 alt="Screenshot of Airbnb clone project" loading="lazy" />
           </a>
-        </h5>
-        <p class="card-text">A responsive clone of the Airbnb landing experience.</p>
-      </div>
-    </article>
 
-    <!-- Card 2 -->
-    <article class="card" style="width: 18rem;">
-      <a class="links"
-         href="https://frolicking-duckanoo-fa3751.netlify.app"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Open Newsweek Clone project in a new tab">
-        <img class="card-img-top" src="./assets/newsweekclone.png"
-             alt="Screenshot of Newsweek clone project" loading="lazy" />
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">
-          <a class="links"
+          <div class="project-card__body">
+            <h5 class="project-card__title">
+              <a class="project-card__title-link"
+                 href="https://zesty-tiramisu-ac1a5a.netlify.app"
+                 target="_blank" rel="noopener noreferrer">
+                Airbnb Clone
+              </a>
+            </h5>
+            <p class="project-card__text">A responsive clone of the Airbnb landing experience.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <a class="project-card__link"
              href="https://frolicking-duckanoo-fa3751.netlify.app"
-             target="_blank" rel="noopener noreferrer">
-            Newsweek Clone
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open Newsweek Clone project in a new tab">
+            <img class="project-card__img" src="./assets/newsweekclone.png"
+                 alt="Screenshot of Newsweek clone project" loading="lazy" />
           </a>
-        </h5>
-        <p class="card-text">A clone of the Newsweek home page using modern layout techniques.</p>
-      </div>
-    </article>
 
-    <!-- Card 3 -->
-    <article class="card" style="width: 18rem;">
-      <a class="links" href="#"
-         aria-label="Upcoming project placeholder">
-        <img class="card-img-top" src="./assets/nextproject.jfif"
-             alt="Placeholder for upcoming personal project" loading="lazy" />
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">
-          <a class="links" href="#">Next Project</a>
-        </h5>
-        <p class="card-text">I will place my personal website here.</p>
-      </div>
-    </article>
-  </div>
-</section>
+          <div class="project-card__body">
+            <h5 class="project-card__title">
+              <a class="project-card__title-link"
+                 href="https://frolicking-duckanoo-fa3751.netlify.app"
+                 target="_blank" rel="noopener noreferrer">
+                Newsweek Clone
+              </a>
+            </h5>
+            <p class="project-card__text">A clone of the Newsweek home page using modern layout techniques.</p>
+          </div>
+        </article>
 
+        <article class="project-card">
+          <a class="project-card__link" href="#"
+             aria-label="Upcoming project placeholder">
+            <img class="project-card__img" src="./assets/nextproject.jfif"
+                 alt="Placeholder for upcoming personal project" loading="lazy" />
+          </a>
+
+          <div class="project-card__body">
+            <h5 class="project-card__title">
+              <a class="project-card__title-link" href="#">Next Project</a>
+            </h5>
+            <p class="project-card__text">I will place my personal website here.</p>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
