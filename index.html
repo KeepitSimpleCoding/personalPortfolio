@@ -12,207 +12,178 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryan Wood | QA + Technical Writing</title>
+  <title>Ryan Wood - QA & Technical Documentation Portfolio</title>
 
-  <!-- Always load style.css first, then mediaqueries.css -->
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./mediaqueries.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
-
   <!-- Desktop Navigation -->
-  <nav id="desktop-nav" class="nav" aria-label="Primary">
-    <div class="nav__brand">
-      <span class="nav__logo">Ryan Wood</span>
+  <nav id="desktop-nav" aria-label="Primary">
+    <div class="logo">Ryan Wood</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="https://keepitsimplecoding5.wordpress.com" target="_blank" rel="noopener noreferrer">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-
-    <ul class="nav__links">
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html">About</a></li>
-      <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="./projects.html">Projects</a></li>
-      <li><a href="https://keepitsimplecoding5.wordpress.com" target="_blank" rel="noopener noreferrer">Blog</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
   </nav>
 
   <!-- Mobile Navigation -->
-  <nav id="hamburger-nav" class="nav nav--mobile" aria-label="Mobile">
-    <div class="nav__brand">
-      <span class="nav__logo">Ryan</span>
-    </div>
+  <nav id="hamburger-nav" aria-label="Mobile">
+    <div class="logo">Ryan</div>
 
-    <div class="nav__mobile">
+    <div class="hamburger-menu">
       <button class="hamburger-icon" aria-label="Toggle menu" onclick="toggleMenu()">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-      <div class="menu-links" id="mobile-menu" aria-hidden="true">
+      <div class="menu-links">
         <ul>
-          <li><a href="./index.html" onclick="toggleMenu()">Home</a></li>
-          <li><a href="./about.html" onclick="toggleMenu()">About</a></li>
-          <li><a href="./projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="./contact.html" onclick="toggleMenu()">Contact</a></li>
-          <li><a href="https://keepitsimplecoding5.wordpress.com" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">Blog</a></li>
-          <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">LinkedIn</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main class="page">
+  <main>
+    <!-- Profile / About -->
+    <section id="profile" class="containerprofile" aria-labelledby="intro-title">
+      <div class="section-pic-container">
+        <img src="./assets/photowithrae.jpeg" class="profilepicture" alt="Ryan with Raelynn" loading="lazy" />
+      </div>
 
-    <!-- HERO / PROFILE -->
-    <section id="profile" class="hero" aria-labelledby="intro-title">
-      <div class="hero__grid">
+      <div class="section-text">
+        <p class="section__text__p1">Hello, world.</p>
+        <h1 id="intro-title" class="title">I'm Ryan.</h1>
 
-        <div class="hero__photo">
-          <img
-            src="./assets/photowithrae.jpeg"
-            class="profilepicture"
-            alt="Ryan with Raelynn"
-            loading="lazy"
-          />
+        <p class="section__text__p2">
+          I'm a background investigator transitioning into tech, specializing in QA testing and technical/API documentation. With 15+ years of experience in analytical writing, documentation, and spotting inconsistencies, I bring a detail-oriented, investigative mindset to software quality and technical writing. I use Python, SQL, and JavaScript for testing and validation, and my English degree strengthens my ability to create clear, structured technical documentation. I'm building a career blending QA, documentation, and thoughtful problem-solving.
+        </p>
+
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('projects.html')">Projects</button>
+          <button class="btn btn-color-2" onclick="window.open('./assets/Wood Ryan Resume.pdf')">Resume</button>
+          <button class="btn btn-color-1" onclick="window.location.href='contact.html'">Cover Letter</button>
         </div>
 
-        <div class="hero__content">
-          <p class="eyebrow">Hello, world.</p>
-          <h1 id="intro-title" class="h1">I’m Ryan.</h1>
+        <div id="socials-container" class="socials">
+          <img src="./assets/github.png" alt="GitHub" class="icon"
+               onclick="window.open('https://github.com/KeepitSimpleCoding','_blank','noopener')" />
 
-          <p class="lead">
-            I’m a background investigator transitioning into tech, specializing in QA testing and technical/API documentation.
-            With 15+ years of analytical writing and documentation, I bring a detail-oriented, investigative mindset to software quality.
-            I use Python, SQL, and JavaScript for testing and validation, and I write clear, structured technical documentation.
-          </p>
-
-          <div class="cta">
-            <a class="btn btn--outline" href="./projects.html">Projects</a>
-            <a class="btn btn--outline" href="./assets/Wood%20Ryan%20Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a class="btn btn--solid" href="./contact.html">Cover Letter</a>
-          </div>
-
-          <div class="socials" aria-label="Social links">
-            <a class="icon-link" href="https://github.com/KeepitSimpleCoding" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">
-              <img src="./assets/github.png" alt="" class="icon" loading="lazy" />
-            </a>
-            <a class="icon-link" href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">
-              <img src="./assets/linkedin.png" alt="" class="icon" loading="lazy" />
-            </a>
-          </div>
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
+               onclick="window.open('https://www.linkedin.com/in/ryan-wood-ba458324a/','_blank','noopener')" />
         </div>
-
       </div>
     </section>
 
-    <!-- PERSONAL PROJECTS -->
-    <section id="personal-projects" class="section">
-      <header class="section__header">
-        <h2 class="h2">Personal Projects</h2>
-        <p class="muted">QA + documentation-focused projects and artifacts.</p>
-      </header>
+    <!-- Personal Projects -->
+    <section id="personal-projects" class="project">
+      <h1 class="projectstitle">Personal Projects</h1>
 
-      <div class="grid">
-        <!-- Kitchen API -->
-        <article class="card">
-          <a class="card__media" href="YOUR_KITCHEN_API_GITHUB_URL" target="_blank" rel="noopener noreferrer">
-            <img class="card__img" src="./assets/kitchenapi.jpg" alt="Kitchen API QA Portfolio cover image" loading="lazy" />
+      <div class="projects">
+        <!-- Kitchen API QA Project -->
+        <div class="card" style="width: 18rem;">
+          <a href="https://github.com/KeepitSimpleCoding/kitchen-api" target="_blank" rel="noopener noreferrer">
+            <img class="card-img-top" src="./assets/kitchenapi.jpg" alt="Kitchen API QA Project" />
           </a>
-          <div class="card__body">
-            <h3 class="h3">
-              <a class="card__title" href="YOUR_KITCHEN_API_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/KeepitSimpleCoding/kitchen-api" target="_blank" rel="noopener noreferrer">
                 Kitchen API QA Portfolio
               </a>
-            </h3>
-
-            <p class="card__text">
-              Manual QA documentation and test artifacts for a Node/Express API:
-              test cases, bug logs, and validation notes.
+            </h5>
+            <p class="card-text">
+              Manual QA documentation and test artifacts for a Node/Express API, including test cases, bug logs, and validation notes.
             </p>
-
-            <div class="card__actions">
-              <a class="btn btn--outline btn--sm" href="YOUR_KITCHEN_API_GITHUB_URL" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-              <a class="btn btn--outline btn--sm" href="YOUR_KITCHEN_API_LIVE_URL" target="_blank" rel="noopener noreferrer">Live Demo</a>
-              <a class="btn btn--solid btn--sm" href="YOUR_DOCS_URL" target="_blank" rel="noopener noreferrer">Docs</a>
+            <div class="btn-container">
+              <button class="btn btn-color-2" onclick="window.open('https://github.com/KeepitSimpleCoding/kitchen-api','_blank','noopener')">
+                GitHub Repo
+              </button>
+              <button class="btn btn-color-1" onclick="window.open('https://github.com/KeepitSimpleCoding/kitchen-api#readme','_blank','noopener')">
+                Docs
+              </button>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Placeholder -->
-        <article class="card">
-          <div class="card__media">
-            <img class="card__img" src="./assets/nextproject.jfif" alt="Placeholder project" loading="lazy" />
+        <!-- Placeholder for next project -->
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./assets/nextproject.jfif" alt="Next Personal Project" />
+          <div class="card-body">
+            <h5 class="card-title">Next Personal Project</h5>
+            <p class="card-text">More QA and documentation-focused work coming soon.</p>
           </div>
-          <div class="card__body">
-            <h3 class="h3">Next Personal Project</h3>
-            <p class="card__text">More QA and documentation-focused work coming soon.</p>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- ALTCademy PROJECTS -->
-    <section id="altcademy-projects" class="section">
-      <header class="section__header">
-        <h2 class="h2">AltCademy Projects</h2>
-        <p class="muted">Front-end builds from my full-stack program.</p>
-      </header>
+    <!-- AltCademy Projects -->
+    <section id="projects" class="project">
+      <h1 class="projectstitle">AltCademy Projects</h1>
 
-      <div class="grid">
-        <article class="card">
-          <a class="card__media" href="https://zesty-tiramisu-ac1a5a.netlify.app" target="_blank" rel="noopener noreferrer">
-            <img class="card__img" src="./assets/airbnb.jpg" alt="Airbnb clone screenshot" loading="lazy" />
+      <div class="projects">
+        <div class="card" style="width: 18rem;">
+          <a href="https://zesty-tiramisu-ac1a5a.netlify.app" target="_blank" rel="noopener noreferrer">
+            <img class="card-img-top" src="./assets/airbnb.jpg" alt="Airbnb Clone" />
           </a>
-          <div class="card__body">
-            <h3 class="h3">
-              <a class="card__title" href="https://zesty-tiramisu-ac1a5a.netlify.app" target="_blank" rel="noopener noreferrer">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://zesty-tiramisu-ac1a5a.netlify.app" target="_blank" rel="noopener noreferrer">
                 Airbnb Clone
               </a>
-            </h3>
-            <p class="card__text">A responsive clone of the Airbnb landing experience.</p>
+            </h5>
+            <p class="card-text">A responsive clone of the Airbnb landing experience.</p>
           </div>
-        </article>
+        </div>
 
-        <article class="card">
-          <a class="card__media" href="https://frolicking-duckanoo-fa3751.netlify.app" target="_blank" rel="noopener noreferrer">
-            <img class="card__img" src="./assets/newsweekclone.png" alt="Newsweek clone screenshot" loading="lazy" />
+        <div class="card" style="width: 18rem;">
+          <a href="https://frolicking-duckanoo-fa3751.netlify.app" target="_blank" rel="noopener noreferrer">
+            <img class="card-img-top" src="./assets/newsweekclone.png" alt="Newsweek Clone" />
           </a>
-          <div class="card__body">
-            <h3 class="h3">
-              <a class="card__title" href="https://frolicking-duckanoo-fa3751.netlify.app" target="_blank" rel="noopener noreferrer">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://frolicking-duckanoo-fa3751.netlify.app" target="_blank" rel="noopener noreferrer">
                 Newsweek Clone
               </a>
-            </h3>
-            <p class="card__text">A clone of the Newsweek home page using modern layout techniques.</p>
+            </h5>
+            <p class="card-text">A clone of the Newsweek home page using modern layout techniques.</p>
           </div>
-        </article>
+        </div>
 
-        <article class="card">
-          <div class="card__media">
-            <img class="card__img" src="./assets/nextproject.jfif" alt="Next project placeholder" loading="lazy" />
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="./assets/nextproject.jfif" alt="Next Project" />
+          <div class="card-body">
+            <h5 class="card-title">Next Project</h5>
+            <p class="card-text">I will place my personal website here.</p>
           </div>
-          <div class="card__body">
-            <h3 class="h3">Next Project</h3>
-            <p class="card__text">I will place my personal website here.</p>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
+  <footer>
+    <div class="footer">
       <div class="footer__text">
         <p>© 2025 Ryan Wood</p>
-        <p class="muted">Part of AltCademy’s full stack program</p>
+        <p class="footer__text__2">Part of Altcademy's full stack program</p>
       </div>
-      <img src="./assets/altcademy.png" alt="AltCademy logo" class="footer__logo" loading="lazy" />
+      <div class="footer__altcademy">
+        <img src="./assets/altcademy.png" alt="Altcademy logo" class="icon" loading="lazy" />
+      </div>
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
