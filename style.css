@@ -66,3 +66,22 @@
   display: block;
 }
 
+/* === FINAL OVERRIDE: stop AltCademy images from blowing up === */
+/* mediaqueries.css loads after style.css, so overrides must live here (or later) */
+
+#projects .project-card__link {
+  display: block !important;
+}
+
+#projects .project-card__img {
+  width: 100% !important;
+  height: 180px !important;
+  max-height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Optional: if the cards themselves are stretching too tall */
+#projects .project-card {
+  align-self: start !important;
+}
