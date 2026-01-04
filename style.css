@@ -56,3 +56,13 @@
   background: #111;
   border-radius: 3px;
 }
+
+
+/* === HARD OVERRIDE: project images too large === */
+.project-card__img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block;
+}
+
