@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="mediaqueries.css">
-
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4V6RKM8T9"></script>
@@ -18,13 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Ryan Wood</title>
 
+  <!-- Your existing stylesheets (keep these if you already use them) -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+
   <style>
     /* ---------- GLOBAL ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -36,12 +32,9 @@
     a {
       text-decoration: none;
       color: #007acc;
-      transition: 0.3s;
+      transition: 0.2s;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     /* ---------- NAV ---------- */
     nav {
@@ -50,7 +43,7 @@
       align-items: center;
       padding: 1rem 8rem;
       background: #ffffff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -72,66 +65,104 @@
       font-weight: 500;
       color: #333;
     }
-
-    .nav-links a:hover {
-      color: #007acc;
-    }
+    .nav-links a:hover { color: #007acc; }
 
     /* ---------- MAIN CONTENT ---------- */
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 3rem auto;
       background: #fff;
       border-radius: 12px;
       padding: 2.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 1rem;
-      font-size: 2.4rem;
+      margin-bottom: 0.75rem;
+      font-size: 2.2rem;
       color: #222;
     }
 
     p.intro {
       text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      margin: 0 auto 2.25rem auto;
       color: #555;
+      max-width: 760px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .section-title {
+      margin: 2rem 0 0.75rem 0;
+      font-size: 1.15rem;
+      color: #222;
+      letter-spacing: 0.2px;
     }
 
     /* ---------- PROJECT LIST ---------- */
     ul.projects {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     ul.projects li {
       background: #f9f9f9;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       padding: 1.2rem;
       border-left: 5px solid #007acc;
       border-radius: 6px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     ul.projects li:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    ul.projects li a {
+    .project-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-title a {
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #007acc;
     }
 
-    ul.projects li span {
+    .tag {
+      font-size: 0.85rem;
+      color: #444;
+      background: #e9f4ff;
+      border: 1px solid #cfeaff;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .desc {
       display: block;
-      margin-top: 0.3rem;
+      margin-top: 0.35rem;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    .links {
+      margin-top: 0.65rem;
       font-size: 0.95rem;
       color: #555;
+    }
+
+    .links a { font-weight: 600; }
+
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
     }
 
     /* ---------- FOOTER ---------- */
@@ -143,6 +174,13 @@
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #777;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.25rem; }
+      main { margin: 1.5rem 1rem; padding: 1.75rem; }
+      .nav-links { gap: 1.25rem; flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -156,7 +194,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="https://www.linkedin.com/in/ryan-wood-ba458324a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
         <li><a href="https://keepitsimplecoding5.wordpress.com" target="_blank" rel="noopener noreferrer">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -164,65 +202,124 @@
   </nav>
 
   <main>
-    <h1>Welcome to My Projects</h1>
+    <h1>Projects</h1>
     <p class="intro">
-     This is my "portfolio" page with projects that are being worked on. As of January 2026, I am in the process of building new projects. I previously focused on front end web design, though I have found my passion to be data quality and documentation. The most recent project includes a deployed serverless API on AWS
-      that was tested with Postman.
+      A small collection of projects focused on APIs, practical automation, documentation, and data quality.
+      I’m continuing to expand my SQL + Python work in 2026.
     </p>
 
+    <div class="section-title">API & Systems Projects</div>
     <ul class="projects">
-      <!-- ✅ New AWS Project -->
+      <!-- Kitchen API -->
       <li>
-  <a href="https://github.com/KeepitSimpleCoding/personalPortfolio#readme" title="AWS Lambda + API Gateway + Postman validation">
-    ☁️ AWS Serverless API (Lambda + Postman Tested)
-  </a>
-  <span>
-    Deployed a Python-based serverless function on AWS Lambda. Verified live endpoint with Postman (200 OK response and correct body).
-    
-    <br><br>
-    <a href="https://9heun1lhi8.execute-api.us-east-2.amazonaws.com/default/helloWorld"
-       target="_blank"
-       rel="noopener noreferrer">
-       View Live Endpoint
-    </a>
-    &nbsp;|&nbsp;
-    <a href="https://github.com/KeepItSimpleCoding5/aws-lambda-api-demo"
-       target="_blank"
-       rel="noopener noreferrer">
-       View Code on GitHub
-    </a>
-  </span>
-</li>
+        <div class="project-title">
+          <a href="https://github.com/KeepitSimpleCoding/kitchenAPI" target="_blank" rel="noopener noreferrer">
+            🍽️ Kitchen API (Node/Express)
+          </a>
+          <span class="tag">API • JavaScript</span>
+        </div>
+        <span class="desc">
+          Built a REST-style API with multiple endpoints to simulate ordering and menu workflows. Focused on clean requests/responses and predictable behavior.
+        </span>
+        <div class="links">
+          <a href="https://github.com/KeepitSimpleCoding/kitchenAPI" target="_blank" rel="noopener noreferrer">View repo</a>
+        </div>
+      </li>
+
+      <!-- AWS Lambda Demo -->
+      <li>
+        <div class="project-title">
+          <a href="https://github.com/KeepItSimpleCoding5/aws-lambda-api-demo" target="_blank" rel="noopener noreferrer">
+            ☁️ AWS Serverless API (Lambda + Postman Tested)
+          </a>
+          <span class="tag">AWS • API</span>
+        </div>
+        <span class="desc">
+          Deployed a serverless endpoint on AWS Lambda and validated responses using Postman (status code + response body).
+        </span>
+        <div class="links">
+          <a href="https://9heun1lhi8.execute-api.us-east-2.amazonaws.com/default/helloWorld" target="_blank" rel="noopener noreferrer">Live endpoint</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/KeepItSimpleCoding5/aws-lambda-api-demo" target="_blank" rel="noopener noreferrer">View repo</a>
+        </div>
+      </li>
+
+      <!-- Weather API (in progress) -->
+      <li>
+        <div class="project-title">
+          <a href="#" onclick="return false;" aria-disabled="true">
+            🌦️ Weather API App
+          </a>
+          <span class="tag">In progress</span>
+        </div>
+        <span class="desc">
+          JavaScript app that fetches and displays live weather data from an external API. <span class="muted">(Link coming soon.)</span>
+        </span>
+      </li>
+    </ul>
+
+    <div class="section-title">JavaScript Logic Projects</div>
+    <ul class="projects">
+      <!-- Rock Paper Scissors -->
+      <li>
+        <div class="project-title">
+          <a href="https://github.com/KeepitSimpleCoding/RockPaperScissors" target="_blank" rel="noopener noreferrer">
+            ✊✋✌️ Rock Paper Scissors (Vanilla JavaScript)
+          </a>
+          <span class="tag">JavaScript</span>
+        </div>
+        <span class="desc">
+          Browser-based game with multiple modes, score tracking, randomized AI choices, and input handling via prompts. Focused on control flow and state management.
+        </span>
+        <div class="links">
+          <a href="https://github.com/KeepitSimpleCoding/RockPaperScissors" target="_blank" rel="noopener noreferrer">View repo</a>
+        </div>
+      </li>
+
+      <!-- Blackjack (add your repo when ready) -->
+      <li>
+        <div class="project-title">
+          <a href="#" onclick="return false;" aria-disabled="true">
+            🃏 Blackjack Game (JavaScript)
+          </a>
+          <span class="tag">Optional</span>
+        </div>
+        <span class="desc">
+          A JavaScript blackjack game demonstrating game state, conditional logic, and user interaction. <span class="muted">(Add repo link when you’re ready.)</span>
+        </span>
+      </li>
+    </ul>
+
+    <div class="section-title">Data & Documentation (Next Up)</div>
+    <ul class="projects">
+      <li>
+        <div class="project-title">
+          <a href="#" onclick="return false;" aria-disabled="true">
+            🧠 SQL Data Quality Project
+          </a>
+          <span class="tag">Planned</span>
+        </div>
+        <span class="desc">
+          A SQL-focused project emphasizing validation checks, anomaly detection, and clear reporting of data issues. <span class="muted">(Link coming soon.)</span>
+        </span>
+      </li>
 
       <li>
-        <a href="#">🌦️ Weather API App</a>
-        <span>A JavaScript-powered web app that fetches and displays live weather data from an external API.</span>
-      </li>
-      <li>
-        <a href="#">🤖 Chatbot Project</a>
-        <span>An interactive chatbot that uses logic, conditionals, and possibly a backend API to simulate conversations.</span>
-      </li>
-      <li>
-        <a href="#">🗄️ SQL Database Project</a>
-        <span>A data project that involves designing databases, writing queries, and analyzing structured data.</span>
-      </li>
-      <li>
-        <a href="#">📝 Technical Writing Sample</a>
-        <span>A professional documentation project showcasing clear, concise technical content.</span>
-      </li>
-      <li>
-        <a href="#">🧪 Software Testing Project</a>
-        <span>A QA-focused project that includes manual test cases and possibly automated test scripts.</span>
-      </li>
-      <li>
-        <a href="#">⚛️ React Web Application</a>
-        <span>A front-end application built with React, demonstrating dynamic UI and component-based design.</span>
+        <div class="project-title">
+          <a href="#" onclick="return false;" aria-disabled="true">
+            ✍️ Technical Writing Sample
+          </a>
+          <span class="tag">Planned</span>
+        </div>
+        <span class="desc">
+          A documentation sample showcasing clear, structured technical writing (SOP, user guide, or API documentation). <span class="muted">(Link coming soon.)</span>
+        </span>
       </li>
     </ul>
   </main>
 
   <footer>
-    <p>© 2025 Ryan Wood</p>
+    <p>© 2026 Ryan Wood</p>
   </footer>
 </body>
 </html>
